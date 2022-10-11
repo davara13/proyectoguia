@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\HomeControler::class,'index']);
+Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class,'index']);
+Route::resource('/expense_report', App\Http\Controllers\ExpenseReportController::class);
+
